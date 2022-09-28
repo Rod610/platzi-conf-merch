@@ -12,7 +12,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-       	  GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+			GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
