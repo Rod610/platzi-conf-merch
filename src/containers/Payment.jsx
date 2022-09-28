@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PayPalButtons } from '@paypal/react-paypal-js';
 import AppContext from '../context/AppContext';
@@ -13,7 +13,7 @@ const Payment = () => {
 
 
   // const paypalOptions = {
-  //   clientId: 'sf29zsrz2nh7rqv7$c84abf433d1ee30213d24ae2924b21de',
+  //   clientId: '',
   //   intent: 'capture',
   //   currency: 'USD'
   // };
@@ -89,13 +89,6 @@ const Payment = () => {
               });
             }}
           />
-          {/* <PayPalButton options={paypalOptions}
-            style={buttonStyles}
-            amount={handleSumTotal()}
-            onSuccess={data => console.log('Success..', data)}
-            onApprove={data => handlePaymentSuccess(data)}
-            onError={error => console.log('Error', error)}
-            /> */}
 
         </div>
       </div>

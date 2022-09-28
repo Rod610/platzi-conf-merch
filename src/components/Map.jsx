@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext }  from 'react';
+import AppContext from '../context/AppContext';
 import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
-const Map = ({data}) => {
+const Map = ({ data }) => {
+
+    const { state } = useContext(AppContext);
+    const { gMapsApiKey } = state;
+
+    console.log('gMapsApiKey', gMapsApiKey);
 
     const mapStyles = {
         height: "50vh",
@@ -10,17 +16,17 @@ const Map = ({data}) => {
 
     const defaultCenter = {
         lat: data.lat, lng: data.lng
-      }
+    }
 
     return (
-        <LoadScript googleMapsApiKey='AIzaSyB9kCrPEs72NLhD9K06rc9GQvQQ_sJDdf0'>
-            <GoogleMap 
-            mapContainerStyle={mapStyles}
-            zoom={15}
-            center={defaultCenter}
+        <LoadScript googleMapsApiKey={gMapsApiKey}>
+            <GoogleMap
+                mapContainerStyle={mapStyles}
+                zoom={15}
+                center={defaultCenter}
             >
-            <MarkerF position={defaultCenter}/>
-            <></>
+                <MarkerF position={defaultCenter} />
+                <></>
             </GoogleMap>
         </LoadScript>
     )

@@ -1,5 +1,5 @@
 export default {
-    gmapsApiKey: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyB9kCrPEs72NLhD9K06rc9GQvQQ_sJDdf0&callback=initMap',
+    gMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
     cart: [],
     buyer: [],
     orders: [],
