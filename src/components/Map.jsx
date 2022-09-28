@@ -1,13 +1,7 @@
-import React, { useContext }  from 'react';
-import AppContext from '../context/AppContext';
+import React from 'react';
 import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
-const Map = ({ data }) => {
-
-    const { state } = useContext(AppContext);
-    const { gMapsApiKey } = state;
-
-    console.log('gMapsApiKey', gMapsApiKey);
+const Map = ({ data, gMapsApiKey }) => {
 
     const mapStyles = {
         height: "50vh",
