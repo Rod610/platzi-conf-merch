@@ -7,10 +7,8 @@ import '../styles/components/Layout.css';
 
 const Layout = () => {
     return (
-        <div className='Main'>
+        <div>
             <Header />
-
-            <p className="text-3xl font-semibold text-primary dark:text-white">Our Recomendations</p>
             <Outlet />
             <Footer />
         </div>
