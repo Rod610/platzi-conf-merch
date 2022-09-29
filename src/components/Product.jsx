@@ -23,7 +23,7 @@ const Product = ({ product, handleAddToCart }) => {
                 </div>
             </div>
             <div className="mt-6">
-                <button  className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200 w-full" type='button' onClick={() => handleAddToCart(product)}>Add to bag</button>
+                <button  className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200 w-full" type='button' onClick={() => handleAddToCart(product)}>Add to cart</button>
             </div>
         </div>
     )
