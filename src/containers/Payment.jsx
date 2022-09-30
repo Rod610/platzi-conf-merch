@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PayPalButtons } from '@paypal/react-paypal-js';
 import AppContext from '../context/AppContext';
-// import '../styles/components/Payment.css';
 
 const Payment = () => {
 
@@ -66,7 +65,7 @@ const Payment = () => {
                 {cart.map((product) => (
                   <li key={product.id} className="flex space-x-6 py-6">
                     <img
-                      src={product.image}
+                      src={product.featuredImage.src}
                       alt={product.title}
                       className="h-24 w-24 flex-none rounded-md bg-gray-100 object-cover object-center"
                     />
@@ -78,6 +77,7 @@ const Payment = () => {
                           </h3>
                           <p className="text-gray-900">$ {product.price}</p>
                           <p className="hidden text-gray-500 sm:block">{product.description}</p>
+                          <p className="text-gray-500">Quantity: {product.quantity}</p>
                         </div>
                         <div className="flex flex-none space-x-4">
                           <div className="flex border-l border-gray-300 pl-4">

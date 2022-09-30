@@ -7,10 +7,23 @@ const useInitialState = () => {
 
 
     const addToCart = payload => {
+
+        let result = state.cart.find(product => product.id === payload.id);
+
+        let cart = [];
+
+        if (result) {
+            result.quantity = result.quantity + 1;
+            result.price = result.price * result.quantity;
+            cart = [...state.cart]
+        } else {
+            cart = [...state.cart, { ...payload }]
+        }
+
         setState({
             ...state,
-            cart: [...state.cart, payload]
-        })
+            cart
+        });
     };
 
     const removeFromCart = payload => {

@@ -9,7 +9,6 @@ const api = `https://maps.googleapis.com/maps/api/geocode/json?address=${buyer.a
 useEffect(() => {
     const getData = async () => {
         const response = await axios(api);
-        console.log("response", response);
         setMap(response.data.results[0].geometry.location);
     };
 

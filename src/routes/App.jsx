@@ -8,6 +8,7 @@ import Payment from '../containers/Payment';
 import Success from '../containers/Success';
 import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
+import ProductDetail from '../components/ProductDetail';
 
 import AppContext from '../context/AppContext';
 import useInitialState from '../hooks/useInitialState';
@@ -24,6 +25,7 @@ const App = () => {
                     <Routes>
                         <Route exact path="/" element={<Layout />}>
                             <Route index element={<Home />} />
+                            <Route exact path="/product/:productId" element={<ProductDetail />} />
                             <Route exact path="/checkout" element={<Checkout />} />
                             <Route exact path="/checkout/information" element={<Information />} />
                             <Route exact path="/checkout/payment" element={<Payment />} />

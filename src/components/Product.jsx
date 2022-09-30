@@ -1,16 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Product = ({ product, handleAddToCart }) => {
     return (
         <div>
+            <Link to={`/product/${product.id}`}>
             <div className="relative">
-                <div className="relative h-72 w-full overflow-hidden rounded-lg">
-                    <img
-                        src={product.image}
-                        alt={product.title}
-                        className="h-full w-full object-cover object-center"
-                    />
-                </div>
+                
+                    <div className="relative h-72 w-full overflow-hidden rounded-lg">
+
+                        <img
+                            src={product.featuredImage.src}
+                            alt={product.title}
+                            className="h-full w-full object-cover object-center"
+                        />
+
+                    </div>
+                
                 <div className="relative mt-4">
                     <h3 className="text-sm font-medium text-gray-900">{product.title}</h3>
                 </div>
@@ -22,9 +28,10 @@ const Product = ({ product, handleAddToCart }) => {
                     <p className="relative text-lg font-semibold text-white">$ {product.price}</p>
                 </div>
             </div>
-            <div className="mt-6">
+            {/* <div className="mt-6">
                 <button  className="relative flex items-center justify-center rounded-md border border-transparent bg-gray-100 py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-200 w-full" type='button' onClick={() => handleAddToCart(product)}>Add to cart</button>
-            </div>
+            </div> */}
+            </Link>
         </div>
     )
 }

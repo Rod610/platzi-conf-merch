@@ -4,7 +4,8 @@ import AppContext from '../context/AppContext';
 
 import {
   CheckIcon,
-  ClockIcon
+  ClockIcon,
+  ShoppingBagIcon
 } from '@heroicons/react/24/outline';
 
 
@@ -17,38 +18,14 @@ const Checkout = () => {
     removeFromCart(product);
   };
 
-  
+
 
   return (
-    // <div className="Checkout">
-    //   <div className="Checkout-content">
-    //     <h3>{cart.length > 0 ? "Lista de pedidos:": "Sin pedidos..."}</h3>
-    //     {cart.map((item) => (
-    //       <div key={item.id} className="Checkout-item">
-    //         <div className="Checkout-element">
-    //           <h4>{item.title}</h4>
-    //           <span>$ {item.price}</span>
-    //         </div>
-    //         <button type='button' onClick={() => handleRemove(item)}>
-    //           <i className="fas fa-trash-alt" title="Eliminar" />
-    //         </button>
-    //       </div>))}
-
-    //   </div>
-    //   {cart.length > 0 && (
-    //     <div className="Checkout-sidebar">
-    //       <h3>{`Precio Total $ ${handleSumTotal()}`}</h3>
-    //       <Link to="/checkout/information">
-    //         <button type='button'>Continuar pedido</button>
-    //       </Link>
-    //     </div>)}
-    // </div>
-
     <div className="bg-white">
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:px-0">
         <h1 className="text-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
 
-        <form className="mt-12">
+        {cart.length > 0 && <form className="mt-12">
           <section aria-labelledby="cart-heading">
             <h2 id="cart-heading" className="sr-only">
               Items in your shopping cart
@@ -59,7 +36,7 @@ const Checkout = () => {
                 <li key={product.id} className="flex py-6">
                   <div className="flex-shrink-0">
                     <img
-                      src={product.image}
+                      src={product.featuredImage.src}
                       alt={product.title}
                       className="h-24 w-24 rounded-md object-cover object-center sm:h-32 sm:w-32"
                     />
@@ -81,6 +58,11 @@ const Checkout = () => {
 
                     <div className="mt-4 flex flex-1 items-end justify-between">
                       <p className="flex items-center space-x-2 text-sm text-gray-700">
+                        Quantity: {product.quantity}
+                      </p>
+                    </div>
+                    <div className="mt-4 flex flex-1 items-end justify-between">
+                      <p className="flex items-center space-x-2 text-sm text-gray-700">
                         {product.inStock ? (
                           <CheckIcon className="h-5 w-5 flex-shrink-0 text-green-500" aria-hidden="true" />
                         ) : (
@@ -89,6 +71,7 @@ const Checkout = () => {
 
                         <span>{product.inStock ? 'In stock' : `Will ship in ${product.leadTime}`}</span>
                       </p>
+
                       <div className="ml-4">
                         <button type="button" onClick={() => handleRemove(product)} className="text-sm font-medium text-red-700 hover:text-red-800">
                           <span>Remove</span>
@@ -139,7 +122,14 @@ const Checkout = () => {
               </p>
             </div>
           </section>
-        </form>
+        </form>}
+        {cart.length <= 0 && <div className="text-center">
+          <ShoppingBagIcon
+            className="mx-auto h-12 w-12 text-gray-400"
+          />
+          <h2 className="mt-2 text-lg font-medium text-gray-900">Add products to your cart</h2>
+          <p className="mt-1 text-sm text-gray-500">You haven’t added any product to your cart yet.</p>
+        </div>}
       </div>
     </div>
   )

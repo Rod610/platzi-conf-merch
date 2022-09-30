@@ -11,16 +11,6 @@ const Success = () => {
   const location = useGoogleAddress(gMapsApiKey, buyer);
 
   return (
-    // <div className="Succes">
-    //   <div className="Success-content">
-    //     <h2>{`${buyer[0].name}, Gracias por tu compra`}</h2>
-    //     <span>Tu pedido llegará en 3 dias a tu dirección:</span>
-    //     <div className="Success-map">
-    //       <Map data={location} gMapsApiKey={gMapsApiKey} />
-    //     </div>
-    //   </div>
-    // </div>
-
     <main className="bg-white px-4 pt-16 pb-24 sm:px-6 sm:pt-24 lg:px-8 lg:py-32">
       <div className="mx-auto max-w-3xl">
         <div className="max-w-xl">
@@ -43,7 +33,7 @@ const Success = () => {
           {cart.map((product) => (
             <div key={product.id} className="flex space-x-6 border-b border-gray-200 py-10">
               <img
-                src={product.image}
+                src={product.featuredImage.src}
                 alt={product.title}
                 className="h-20 w-20 flex-none rounded-lg bg-gray-100 object-cover object-center sm:h-40 sm:w-40"
               />
@@ -58,7 +48,7 @@ const Success = () => {
                   <dl className="flex space-x-4 divide-x divide-gray-200 text-sm sm:space-x-6">
                     <div className="flex">
                       <dt className="font-medium text-gray-900">Quantity</dt>
-                      <dd className="ml-2 text-gray-700">1</dd>
+                      <dd className="ml-2 text-gray-700">{product.quantity}</dd>
                     </div>
                     <div className="flex pl-4 sm:pl-6">
                       <dt className="font-medium text-gray-900">Price</dt>
