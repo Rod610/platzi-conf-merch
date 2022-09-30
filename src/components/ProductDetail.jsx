@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Tab } from '@headlessui/react';
 import { StarIcon } from '@heroicons/react/20/solid';
 
@@ -13,8 +14,12 @@ const ProductDetail = () => {
     const { state, addToCart } = useContext(AppContext);
     const { products } = state;
 
+    const navigate = useNavigate();
+
     const handleAddToCart = (product) => {
         addToCart(product);
+
+        navigate('/checkout');
     };
 
     const { productId } = useParams();
