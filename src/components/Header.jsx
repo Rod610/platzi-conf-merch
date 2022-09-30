@@ -12,9 +12,9 @@ const Header = () => {
   const { cart } = state;
 
   return (
-    <header className='hidden lg:flex w-full'>
+    <header className='lg:flex w-full'>
       <nav
-        className="hidden lg:flex w-full h-14 bg-red-700 justify-between p-4 dark:bg-gray-800"
+        className="lg:flex w-full h-14 bg-red-700 justify-between p-4 dark:bg-gray-800"
       >
         <div className="w-auto h-auto">
           <p className="font-black text-principal text-lg text-white">
