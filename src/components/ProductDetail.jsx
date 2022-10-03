@@ -31,7 +31,6 @@ const ProductDetail = () => {
         <div>
             <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                 <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
-                    {/* Image gallery */}
                     <Tab.Group as="div" className="flex flex-col-reverse">
                         <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
                             <Tab.List className="grid grid-cols-4 gap-6">
@@ -73,7 +72,6 @@ const ProductDetail = () => {
                         </Tab.Panels>
                     </Tab.Group>
 
-                    {/* Product info */}
                     <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
                         <h1 className="text-3xl font-bold tracking-tight text-gray-900">{selectedProduct.title}</h1>
 
@@ -82,7 +80,6 @@ const ProductDetail = () => {
                             <p className="text-3xl tracking-tight text-gray-900">$ {selectedProduct.price}</p>
                         </div>
 
-                        {/* Reviews */}
                         <div className="mt-3">
                             <h3 className="sr-only">Reviews</h3>
                             <div className="flex items-center">
